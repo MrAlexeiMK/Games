@@ -40,7 +40,7 @@
 
 <div class="bg page-header header-filter" style="background-image: url('../../resources/images/font.gif');">
     <div class="main main-raised col-md-4 mx-auto text-center section">
-        <form th:method="GET" th:action="@{/players}" th:object="${player}">
+        <form th:method="GET" th:action="@{/auth/login}" th:object="${player}">
             <label th:for="nick">Ник-нейм: </label> <br/>
             <input type="text" th:field="*{nick}" id="name"/>
             <div style="color:red" th:if="${#fields.hasErrors('nick')}" th:errors="*{nick}">Name Error</div>
@@ -52,7 +52,7 @@
             <br/>
             <input type="submit" value="Вход"/>
             <br/>
-            <a href="new.html">Регистрация</a>
+            <a href="reg">Регистрация</a>
             <br />
         </form>
     </div>

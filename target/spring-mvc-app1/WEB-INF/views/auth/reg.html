@@ -10,37 +10,37 @@
 </head>
 <body class="index-page sidebar-collapse">
 <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg navbar-transparent" color-on-scroll="150">
-<div class="container">
-    <div class="navbar-translate">
-        <a class="navbar-brand" href="/">MiniGames</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="/">MiniGames</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div id="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="material-icons">apps</i> Игры</a>
+                    <div class="dropdown-menu dropdown-with-icons">
+                        <a href="/games/chess" class="dropdown-item"><i class="material-icons">layers</i> Шахматы</a>
+                        <a href="/games/tictactoe" class="dropdown-item"><i class="material-icons">layers</i> Крестики-нолики</a>
+                        <a href="/games/mathbattle" class="dropdown-item"><i class="material-icons">layers</i> Математическая битва</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lk"><i class="material-icons">lk</i>Личный кабинет</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div id="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-            <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="material-icons">apps</i> Игры</a>
-                <div class="dropdown-menu dropdown-with-icons">
-                    <a href="/games/chess" class="dropdown-item"><i class="material-icons">layers</i> Шахматы</a>
-                    <a href="/games/tictactoe" class="dropdown-item"><i class="material-icons">layers</i> Крестики-нолики</a>
-                    <a href="/games/mathbattle" class="dropdown-item"><i class="material-icons">layers</i> Математическая битва</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/lk"><i class="material-icons">lk</i>Личный кабинет</a>
-            </li>
-        </ul>
-    </div>
-</div>
 </nav>
 
 <div class="bg page-header header-filter" style="background-image: url('../../resources/images/font.gif');">
     <div class="main main-raised col-md-4 mx-auto text-center section">
-        <form th:method="POST" th:action="@{/players}" th:object="${player}">
+        <form th:method="POST" th:action="@{/auth/reg}" th:object="${player}">
             <label th:for="nick">Ник-нейм: </label> <br/>
             <input type="text" th:field="*{nick}" id="name"/>
             <div style="color:red" th:if="${#fields.hasErrors('nick')}" th:errors="*{nick}">Name Error</div>
@@ -56,7 +56,7 @@
             <br/>
             <input type="submit" value="Регистрация"/>
             <br />
-            <a href="auth.html">Войти</a>
+            <a href="login">Войти</a>
             <br />
         </form>
     </div>

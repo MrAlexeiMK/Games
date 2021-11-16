@@ -27,11 +27,11 @@ public class PlayerValidator implements Validator {
         Player person = (Player) o;
 
         if (playersDB.getPlayerByEmail(person.getEmail()) != null) {
-            errors.rejectValue("email", "", "Email уже используется!");
+            errors.rejectValue("email", "Email уже используется!");
         }
 
         else if (playersDB.getPlayerByNick(person.getNick()) != null) {
-            errors.rejectValue("email", "", "Никнейм уже используется!");
+            errors.rejectValue("email", "Никнейм уже используется!");
         }
     }
 }

@@ -1,0 +1,10 @@
+ru\mralexeimk\games\models\Player.class
+ru\mralexeimk\games\controllers\MainController.class
+ru\mralexeimk\games\database\PlayersDB.class
+ru\mralexeimk\games\config\MySpringMvcDispatcherSerlvetIntitializer.class
+ru\mralexeimk\games\controllers\PlayersController.class
+ru\mralexeimk\games\models\Game.class
+ru\mralexeimk\games\controllers\GamesController.class
+ru\mralexeimk\games\controllers\AuthController.class
+ru\mralexeimk\games\util\PlayerValidator.class
+ru\mralexeimk\games\config\SpringConfig.class
