@@ -37,24 +37,25 @@ public class AuthController {
     public String registerUser(@ModelAttribute("player") @Valid Player player,
                                BindingResult bindingResult, HttpSession session) {
 
-        playerValidator.validate(player, bindingResult);
+        playerValidator.validate(player.addArg("onReg"), bindingResult);
 
         if (bindingResult.hasErrors())
             return "auth/reg";
         playersDB.save(player);
         session.setAttribute("player", player);
 
-
         return "redirect:/";
     }
 
     @PostMapping("/login")
-    public String loginUser(@ModelAttribute("player") @Valid Player player,
+    public String loginUser(@ModelAttribute("player") Player player,
                          BindingResult bindingResult, HttpSession session) {
 
+        playerValidator.validate(player.addArg("onLogin"), bindingResult);
+
         if (bindingResult.hasErrors())
-            return "auth/reg";
-        playersDB.save(player);
+            return "auth/login";
+
         session.setAttribute("player", player);
 
         return "redirect:/";

@@ -4,6 +4,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Player {
     private int id;
@@ -20,8 +22,10 @@ public class Player {
     @Email(message = "Некорректный Email")
     private String email;
 
-    public Player() {
+    private Set<String> args;
 
+    public Player() {
+        this.args = new HashSet<>();
     }
 
     public Player(int id, String nick, String password, String email) {
@@ -29,6 +33,7 @@ public class Player {
         this.nick = nick;
         this.password = password;
         this.email = email;
+        this.args = new HashSet<>();
     }
 
     public void setId(int id) {
@@ -46,6 +51,18 @@ public class Player {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Player addArg(String arg) {
+        this.args.add(arg);
+        return this;
+    }
+
+    public Player removeArg(String arg) {
+        this.args.remove(arg);
+        return this;
+    }
+
+    public Set<String> getArgs() { return args; }
 
     public int getId() {
         return id;
