@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать аккаунт</title>
+    <link rel="stylesheet" href="../resources/css/material-kit.css" th:href="@{/resources/css/material-kit.css}">
+    <link rel="stylesheet" href="../resources/css/form.css" th:href="@{/resources/css/form.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="../resources/js/jquery.js" th:src="@{/resources/js/jquery.js}" rel="stylesheet"></script>
+</head>
+<body class="index-page sidebar-collapse">
+<nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg navbar-transparent" color-on-scroll="150">
+    <div class="container">
+        <div class="navbar-translate">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div id="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="material-icons">apps</i> Игры</a>
+                    <div class="dropdown-menu dropdown-with-icons">
+                        <a href="/games/chess" class="dropdown-item"><i class="material-icons">layers</i> Шахматы</a>
+                        <a href="/games/tictactoe" class="dropdown-item"><i class="material-icons">layers</i> Крестики-нолики</a>
+                        <a href="/games/mathbattle" class="dropdown-item"><i class="material-icons">layers</i> Математическая битва</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lk"><i class="material-icons">lk</i>Личный кабинет</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="bg page-header" style="background-image: url('../resources/images/font.gif');">
+    <div class="unselectable title сol-md-5 mx-auto text-center section">
+        <p>MiniGames</p>
+    </div>
+</div>
+
+<footer class="footer" data-background-color="black">
+    <div class="container">
+        <nav class="float-left">
+            <ul>
+                <li>
+                    <a href="https://github.com/MrAlexeiMK/Games">Разработчики</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="copyright float-right">
+            2021-<script>document.write(new Date().getFullYear())</script> © MiniGames
+        </div>
+    </div>
+</footer>
+
+<script src="../resources/js/popper.js" th:src="@{/resources/js/popper.js}" rel="stylesheet"></script>
+<script src="../resources/js/material-design.js" th:src="@{/resources/js/material-design.js}" rel="stylesheet"></script>
+<script src="../resources/js/material-kit.js" th:src="@{/resources/js/material-kit.js}" rel="stylesheet"></script>
+
+</body>
+</html>

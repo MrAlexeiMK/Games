@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список игроков</title>
+</head>
+<body>
+
+<div th:each="player : ${players}">
+    <a th:href="@{/players/{id}(id=${player.getId()})}"
+       th:text="${player.getNick()}">user</a>
+</div>
+
+<br/>
+<hr/>
+
+</body>
+</html>
