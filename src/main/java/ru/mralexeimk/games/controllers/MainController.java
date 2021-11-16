@@ -5,6 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/")
 public class MainController {
@@ -15,5 +17,10 @@ public class MainController {
     }
 
     @GetMapping("/lk")
-    public String lk() { return "lk";}
+    public String lk(HttpSession session) {
+        if(session.getAttribute("player") != null) {
+            return "lk";
+        }
+        return "redirect:auth/login";
+    }
 }

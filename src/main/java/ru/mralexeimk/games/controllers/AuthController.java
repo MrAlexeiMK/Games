@@ -8,6 +8,7 @@ import ru.mralexeimk.games.database.PlayersDB;
 import ru.mralexeimk.games.models.Player;
 import ru.mralexeimk.games.util.PlayerValidator;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -34,26 +35,27 @@ public class AuthController {
 
     @PostMapping("/reg")
     public String registerUser(@ModelAttribute("player") @Valid Player player,
-                         BindingResult bindingResult) {
+                               BindingResult bindingResult, HttpSession session) {
 
         playerValidator.validate(player, bindingResult);
 
         if (bindingResult.hasErrors())
             return "auth/reg";
         playersDB.save(player);
+        session.setAttribute("player", player);
+
 
         return "redirect:/";
     }
 
     @PostMapping("/login")
     public String loginUser(@ModelAttribute("player") @Valid Player player,
-                         BindingResult bindingResult) {
-
-        playerValidator.validate(player, bindingResult);
+                         BindingResult bindingResult, HttpSession session) {
 
         if (bindingResult.hasErrors())
             return "auth/reg";
         playersDB.save(player);
+        session.setAttribute("player", player);
 
         return "redirect:/";
     }
